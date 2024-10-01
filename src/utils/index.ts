@@ -14,13 +14,14 @@ export const groupTicketsByStatus = (tickets: Ticket[]) => {
 
 export const groupTicketsByPriority = (tickets: Ticket[]) => {
     const groups: Record<string, Ticket[]> = tickets.reduce((result: Record<string, Ticket[]>, ticket: Ticket) => {
-        const priority = getPriotityLabel(ticket.priority);
+        console.log(tickets)
+        const priority = getPriotityLabel(ticket.priority); 
         if (!result[priority]) {
             result[priority] = [];
         }
         result[priority].push(ticket);
         return result;
-    }, { "No priority": [], "Low": [], "Medium": [], "High": [], "Urgent": [] });
+    }, { "No priority": [], "Urgent": [], "High": [], "Medium": [], "Low": [] });
 
     return groups;
 };

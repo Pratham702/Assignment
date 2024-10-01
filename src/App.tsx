@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Header from './components/Header';
 import Grid from './components/Grid';
 import { GET_TICKETS_URL } from './constants';

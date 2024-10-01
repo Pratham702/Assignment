@@ -1,8 +1,6 @@
-import React, { useMemo } from 'react';
+import  { useMemo } from 'react';
 import Card from '../Card';
 import "./column.css"
-import { GrAdd } from 'react-icons/gr';
-import { LuMoreHorizontal } from 'react-icons/lu';
 import { Ticket, User } from '../../interfaces';
 import { getPriorityIcon, getStatusIcon } from '../../utils/helper';
 import UserIcon from '../UserIcon';
@@ -40,8 +38,8 @@ function Column({ tickets, grouping, groupBy, userIdToData }: { tickets: Ticket[
                     </div>
                 </div>
                 <div className='column-header-right-container'>
-                    <GrAdd color="#797d84" size={12} />
-                    <LuMoreHorizontal color="#797d84" size={14} />
+                <img title='column-image' src='add.svg' className='column-image' />
+                    <img title='column-image2' src='/3 dot menu.svg' className='column-image2' />
                 </div>
             </div>
             <div className='cards-container'>

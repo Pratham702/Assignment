@@ -1,29 +1,35 @@
-import { BiRadioCircle } from 'react-icons/bi';
-import { LuMoreHorizontal } from 'react-icons/lu';
-import { TbProgress } from 'react-icons/tb';
-import { IoCheckmarkDoneCircle } from 'react-icons/io5';
-import { AiFillCloseCircle, AiFillWarning } from 'react-icons/ai';
-import { BiSignal2, BiSignal3, BiSignal4 } from 'react-icons/bi';
-
-
+// Priority icon function with static src and titles
 export const getPriorityIcon = (priority: string) => {
     switch (priority) {
-        case "No priority": return <LuMoreHorizontal color="#797d84" size={14} />
-        case "Low": return <BiSignal2 color='#6b6f76' size={14} />
-        case "Medium": return <BiSignal3 color='#6b6f76' size={14} />
-        case "High": return <BiSignal4 color='#6b6f76' size={14} />
-        case "Urgent": return <AiFillWarning color='#fc7840' size={14} />
-        default: return <AiFillWarning color='#fc7840' size={14} />
+        case "No priority":
+            return <img src='/HighPriority.svg' style={{ width: "14px", height: "14px", borderRadius: "100%" }} title="No Priority" />;
+        case "Low":
+            return <img src='/LowPriority.svg' style={{ width: "14px", height: "14px", borderRadius: "100%" }} title="Low Priority" />;
+        case "Medium":
+            return <img src='/MediumPriority.svg' style={{ width: "14px", height: "14px", borderRadius: "100%" }} title="Medium Priority" />;
+        case "High":
+            return <img src='/HighPriority.svg' style={{ width: "14px", height: "14px", borderRadius: "100%" }} title="High Priority" />;
+        case "Urgent":
+            return <img src='/UrgentPriority.svg' style={{ width: "14px", height: "14px", borderRadius: "100%" }} title="Urgent Priority" />;
+        default:
+            return <img src='/Backlog.svg' style={{ width: "14px", height: "14px", borderRadius: "100%" }} title="Backlog" />;
     }
 }
 
-export const getStatusIcon = (priority: string) => {
-    switch (priority) {
-        case "Backlog": return <BiRadioCircle color='#e2e2e2' size={24} />
-        case "Todo": return <BiRadioCircle color='#e2e2e2' size={24} />
-        case "In progress": return <TbProgress color='#f1ca4b' size={16} />
-        case "Done": return <IoCheckmarkDoneCircle color='#5e6ad2' size={16} />
-        case "Canceled": return <AiFillCloseCircle color='#94a2b3' size={16} />
-        default: return <AiFillCloseCircle color='#94a2b3' size={16} />
+// Status icon function with static src and titles
+export const getStatusIcon = (status: string) => {
+    switch (status) {
+        case "Backlog":
+            return <img src='/Backlog.svg' style={{ width: "16px", height: "16px", borderRadius: "100%" }} title="Backlog" />;
+        case "Todo":
+            return <img src='/To-do.svg' style={{ width: "16px", height: "16px", borderRadius: "100%" }} title="To-do" />;
+        case "In progress":
+            return <img src='/in-progress.svg' style={{ width: "16px", height: "16px", borderRadius: "100%" }} title="In Progress" />;
+        case "Done":
+            return <img src='/Done.svg' style={{ width: "16px", height: "16px", borderRadius: "100%" }} title="Done" />;
+        case "Canceled":
+            return <img src='/Cancelled.svg' style={{ width: "16px", height: "16px", borderRadius: "100%" }} title="Canceled" />;
+        default:
+            return <img src='/No-priority.svg' style={{ width: "16px", height: "16px", borderRadius: "100%" }} title="No Priority" />;
     }
 }
